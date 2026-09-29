@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="เกมฝึกเขียนโปรแกรมภาษา Python สำหรับนักเรียน ปวช. เรื่องลำดับและการตัดสินใจ" />
+    <title>Python Quest ปวช.</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="hero" aria-labelledby="game-title">
+        <div>
+          <p class="eyebrow">เกมฝึกเขียนโปรแกรมภาษา Python</p>
+          <h1 id="game-title">Python Quest ปวช.</h1>
+          <p class="subtitle">
+            เขียนโค้ดควบคุมหุ่นยนต์ เก็บชิปให้ครบ แล้วเดินไปถึงธง
+            ฝึกทั้งคำสั่งแบบลำดับและคำสั่งตัดสินใจ <code>if</code>
+          </p>
+        </div>
+        <div class="hero-badge" aria-hidden="true">
+          <span>py</span>
+          <small>3 ด่าน</small>
+        </div>
+      </section>
+
+      <section class="game-shell">
+        <aside class="panel level-panel" aria-label="ข้อมูลด่าน">
+          <div class="level-top">
+            <div>
+              <span class="label">ด่านปัจจุบัน</span>
+              <h2 id="level-title">ด่าน 1</h2>
+            </div>
+            <div class="level-chip" id="level-number">1/3</div>
+          </div>
+          <p id="level-goal" class="goal-text"></p>
+          <div class="progress" aria-label="ความคืบหน้า">
+            <div id="progress-bar"></div>
+          </div>
+
+          <div class="reference" aria-label="คำสั่ง Python ที่ใช้ได้">
+            <span class="label">คำสั่งที่ใช้ได้</span>
+            <code>move()</code>
+            <code>turn_left()</code>
+            <code>turn_right()</code>
+            <code>on_blue()</code>
+            <code>wall_ahead()</code>
+          </div>
+
+          <div class="legend">
+            <span><b class="robot-dot"></b> หุ่นยนต์</span>
+            <span><b class="chip-dot"></b> ชิป</span>
+            <span><b class="flag-dot"></b> ธง</span>
+            <span><b class="wall-dot"></b> กำแพง</span>
+            <span><b class="sensor-dot"></b> เซนเซอร์สีฟ้า</span>
+          </div>
+        </aside>
+
+        <section class="board-area" aria-label="กระดานเกม">
+          <div id="board" class="board"></div>
+          <div id="status" class="status ready" role="status" aria-live="polite">พร้อมเขียนโปรแกรม</div>
+        </section>
+
+        <aside class="panel code-panel" aria-label="เขียนโปรแกรมภาษา Python">
+          <div class="panel-heading">
+            <div>
+              <span class="label">โปรแกรมของฉัน</span>
+              <h2>Python Editor</h2>
+            </div>
+            <button id="reset-code-btn" class="icon-btn" title="คืนค่าโค้ดเริ่มต้น" aria-label="คืนค่าโค้ดเริ่มต้น">↺</button>
+          </div>
+
+          <div class="editor-shell">
+            <div class="editor-bar">
+              <span class="file-dot red"></span>
+              <span class="file-dot yellow"></span>
+              <span class="file-dot green"></span>
+              <span class="file-name">main.py</span>
+            </div>
+            <div class="editor-body">
+              <pre id="line-numbers" class="line-numbers" aria-hidden="true">1</pre>
+              <textarea id="code-editor" spellcheck="false" aria-label="พื้นที่เขียนโค้ด Python" autocomplete="off" autocapitalize="off"></textarea>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <span class="hint-label">คำใบ้</span>
+            <p id="level-hint"></p>
+          </div>
+
+          <div id="code-error" class="code-error" role="alert" hidden></div>
+
+          <div class="actions">
+            <button id="run-btn" class="primary">▶ รัน Python</button>
+            <button id="next-btn" class="secondary" disabled>ด่านถัดไป</button>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
